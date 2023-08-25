@@ -57,7 +57,7 @@ function UrlValidator() {
     setBody('');
     setMessage(url);
     }
-  }, [domain, path, method, body]);
+  }, [domain, path, method]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
