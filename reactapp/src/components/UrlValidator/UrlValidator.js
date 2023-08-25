@@ -38,7 +38,7 @@ function UrlValidator() {
     // Construct URL
     
     if(['GET'].includes(method) && body.trim().length > 0) {
-      let te = body.trim().replace(/[\s\{\}\"]+/g,"");
+      let te = body.trim().replace(/[\s\\"]+/g,"");
       const tem = te.trim().replace(":","=");
       url = `${domain}/${cleanedPath}?${tem}`;
     }
@@ -57,7 +57,7 @@ function UrlValidator() {
     setBody('');
     setMessage(url);
     }
-  }, [domain, path, method]);
+  }, [domain, path, method, body]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
