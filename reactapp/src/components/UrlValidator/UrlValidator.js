@@ -38,7 +38,7 @@ function UrlValidator() {
     // Construct URL
     
     if(['GET'].includes(method) && body.trim().length > 0) {
-      let te = body.trim().replace(/[\s\{\}\"]+/g,"");
+      let te = body.trim().replace(/[\s"]+/g,"");
       const tem = te.trim().replace(":","=");
       url = `${domain}/${cleanedPath}?${tem}`;
     }
